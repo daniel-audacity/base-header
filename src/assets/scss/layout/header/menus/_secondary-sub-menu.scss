@@ -1,0 +1,114 @@
+.header {
+  .secondary-submenu-wrap {
+    background: $grey-bg;
+    display: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  .secondary-submenu {
+    border-top: 1px solid $grey-bg-lite;
+    border-bottom: 1px solid $grey-bg-lite;
+    display: block;
+    width: 100%;
+    text-align: center;
+    & > li {
+      display: block;
+      margin: 0;
+      height: auto;
+      padding: 0;
+      float: none;
+      &:first-of-type a {
+        padding-top: 5px;
+      }
+      &:last-of-type a {
+        padding-bottom: 5px;
+      }
+      & > a {
+        background: $grey-bg-lite;
+        display: block;
+        height: auto;
+        width: 100%;
+        padding: 0 15px;
+        color: $grey;
+        font-size: 17px;
+        line-height: 36px;
+        transition: $hover;
+        &:hover {
+          background: $grey-bg;
+          color: $grey-lite;
+        }
+        &.active {
+          color: $blue;
+          &:hover {
+            color: $blue;
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+  .secondary-menu-toggle {
+    &:after {
+      display: inline-block;
+      content: "+";
+      font-family: FontAwesome;
+      font-size: 20px;
+      transition: 0.3s linear;
+      transform-origin: center;
+      margin: 0 0 0 10px;
+    }
+  }
+  .secondary-sub-open {
+    .secondary-menu-toggle {
+      &:after {
+        content: "–";
+      }
+    }
+  }
+
+
+}
+
+/* mobile menu **************************************************************
+*****************************************************************************/
+
+@media (max-width: $screen-md) {
+  .header {
+    .secondary-submenu {
+       & > li {
+         border-bottom: 1px solid $white;
+         &:last-of-type {
+           border: none;
+         }
+         &:only-child {
+           border-top: 1px solid $white;
+         }
+         a {
+          background: #f7f7f7;
+          text-align: left;
+          &:hover {
+            background: initial;
+            color: initial;
+          }
+          &.active {
+            color: $blue;
+            background: initial;
+            &:hover {
+              color: initial;
+              background: initial;
+            }
+          }
+        }
+      }
+    }
+    .secondary-menu-toggle {
+      position: relative;
+      &:after {
+        position: absolute;
+        bottom: 3px;
+        right: 15px;
+      }
+    }
+  }
+}

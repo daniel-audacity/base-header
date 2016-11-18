@@ -1,0 +1,135 @@
+.header {
+  .submenu-wrap {
+    box-shadow: 0 5px 10px 1px rgba(0,0,0,0.1);
+    background: $grey-bg;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 100;
+    @media (max-width: $screen-md) {
+      top: 60px;
+    }
+  }
+  .submenu {
+    display: block;
+    width: 100%;
+    text-align: center;
+    & > li {
+      display: block;
+      margin: 0;
+      height: auto;
+      padding: 0;
+      float: none;
+      &:first-of-type a {
+        padding-top: 5px;
+      }
+      &:last-of-type a {
+        padding-bottom: 5px;
+      }
+      & > a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 0 15px;
+        color: $grey;
+        font-size: 17px;
+        line-height: 36px;
+        transition: $hover;
+        &:hover {
+          background: $white;
+          color: $grey-lite;
+        }
+        &.active {
+          color: $blue;
+          &:hover {
+            color: $blue;
+            background: $white;
+          }
+          background: $grey-bg;
+        }
+      }
+    }
+  }
+}
+
+/* mobile menu **************************************************************
+*****************************************************************************/
+
+@media (max-width: $screen-md) {
+  .header {
+    .submenu {
+      li {
+        .active {
+          background: $white;
+        }
+      }
+    }
+    .submenu-wrap {
+      background: $white;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top: 0px solid transparent;
+      box-shadow: initial;
+      display: none;
+      padding: 0;
+      margin: 0;
+      position: static;
+      top: initial;
+      right: initial;
+      left: initial;
+      overflow: hidden;
+    }
+    .submenu {
+      display: block;
+      width: 100%;
+      text-align: center;
+      & > li {
+        border-top: none;
+        border-bottom: 1px solid $grey-bg;
+        display: block;
+        margin: 0;
+        padding: 0;
+        &:first-of-type a {
+          padding-top: 5px;
+        }
+        &:last-of-type a {
+          padding-bottom: 5px;
+        }
+        &:last-of-type {
+          border: none;
+        }
+        &:only-child {
+          border-top: 1px solid $grey-bg-lite;
+        }
+        a {
+          color: $grey-lite;
+          display: block;
+          height: auto;
+          width: 100%;
+          font-size: 16px;
+          line-height: 36px;
+          font-weight: 300;
+          text-align: left;
+          &:hover {
+            background: initial;
+            color: initial;
+          }
+          &.active {
+            color: $blue;
+            &:hover {
+              color: $blue;
+              background: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}

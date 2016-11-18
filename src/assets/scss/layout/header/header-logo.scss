@@ -1,0 +1,40 @@
+/* header-logo ***************************************************************
+ *****************************************************************************/
+
+.header {
+  .header-logo {
+    display: inline-block;
+    height: 100%;
+    padding: 10px 0;
+    img {
+      display: block;
+      width: 195px;
+      height: auto;
+      @media (max-width: $screen-md) {
+        width: 160px;
+      }
+    }
+  }
+  .mobile-logo {
+    display: none;
+  }
+}
+
+/* mobile menu **************************************************************
+*****************************************************************************/
+
+@media (max-width: $screen-md) {
+  .header {
+    .header-logo {
+      padding-left: 15px;
+    }
+    .mobile-logo {
+      display: inline-block;
+      height: 60px;
+      padding: 15px 0 20px 10px;
+      img {
+        width: 120px;
+      }
+    }
+  }
+}
